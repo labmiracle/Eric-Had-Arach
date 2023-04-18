@@ -1,6 +1,6 @@
 function calcularDiasCrecimiento(velocidadCrecimiento, velocidadDecrecimiento, alturaDeseada) {
   
-  if (!(Number.isInteger(velocidadCrecimiento) && Number.isInteger(velocidadDecrecimiento), Number.isInteger(alturaDeseada))) {
+  if (!(Number.isInteger(velocidadCrecimiento) && Number.isInteger(velocidadDecrecimiento) && Number.isInteger(alturaDeseada))) {
     return 'Todos los datos ingresados deben ser números enteros';
   }
   if (velocidadCrecimiento < 1 || velocidadDecrecimiento < 1 || alturaDeseada < 1) {
