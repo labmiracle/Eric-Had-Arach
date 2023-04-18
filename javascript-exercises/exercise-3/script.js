@@ -21,4 +21,3 @@ function calcularDiasCrecimiento(velocidadCrecimiento, velocidadDecrecimiento, a
   return cantDias;
 }
 
-console.log(calcularDiasCrecimiento(3, 1, 11));
