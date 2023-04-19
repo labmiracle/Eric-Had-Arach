@@ -10,6 +10,9 @@ const names = [
 
 function golfScore(par, strokes) {
   
+  if (typeof par !== 'number' || typeof strokes !== 'number') {
+    return 'One of the values entered is not a number';
+  }
   if (strokes < 1 || par < 1) {
     return 'The information entered is incorrect';
   }
@@ -23,4 +26,4 @@ function golfScore(par, strokes) {
     names[6];
 }
 
-golfScore(5, 4);
+console.loggolfScore(5, 4);
