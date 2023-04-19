@@ -4,8 +4,8 @@ let count = 0;
 function cc(card) {
   
   // Validation
-  const cartas = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
-  if (cartas.includes(card) === false) {
+  const typeOfCards = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+  if (typeOfCards.includes(card) === false) {
     return 'The value entered is incorrect';
   }
 
