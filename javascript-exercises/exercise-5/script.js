@@ -1,5 +1,10 @@
 function camelize(str) {
   
+  // Validation
+  if (typeof str !== 'string') {
+    return 'You must enter a text string';
+  }
+
   let phrase = str.split('');
   let newPhrase = [];
 
