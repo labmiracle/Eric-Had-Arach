@@ -12,7 +12,6 @@ function jugar() {
   do {
     numeroJugador = parseInt(prompt('Ingrese número'));
     if (isNaN(numeroJugador)) {
-      console.log('ingreso');
       alert('Debes introducir un número válido');
     }
     else if (numeroJugador < numeroAleatorio) {
