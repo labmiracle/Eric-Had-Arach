@@ -1,15 +1,11 @@
 function addOnlyNums(...args) {
   
-  let onlyNumbersOrString = args.every(function(elem) {
-    return (typeof elem === 'number' || typeof elem === 'string');
-  });
+  // Validations
+  let onlyNumbersOrString = args.every(elem => (typeof elem === 'number' || typeof elem === 'string'));
   if (onlyNumbersOrString === false) {
-    return 'one of the values is not a number or a string';
+    return 'One of the values is not a number or a string';
   }
-
-  let thereIsANumber = args.some(function(elem) {
-    return typeof elem === 'number';
-  });
+  let thereIsANumber = args.some(elem => typeof elem === 'number');
   if (thereIsANumber === false) {
     return 'None of the arguments is a number';
   }
