@@ -3,7 +3,11 @@ function onlyUniques(...args) {
   let newArray = [];
   
   for (let i = 0; i < args.length; i++) {
+    if (newArray.includes(args[i])) {
+      continue;
+    }
     let quantity = 0;
+
     for (let j =0; j < args.length; j++) {
       if (args[i] === args[j]) {
         quantity++;
