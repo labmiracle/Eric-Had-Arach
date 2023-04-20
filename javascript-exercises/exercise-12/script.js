@@ -3,7 +3,7 @@ function jugar() {
   let limiteDeIntentos;
   do {
     limiteDeIntentos = parseInt(prompt('Ingrese la cantidad máxima de intentos que desea'));
-  }while(limiteDeIntentos === 'NaN');
+  }while(isNaN(limiteDeIntentos));
 
   let numeroAleatorio = 1 + Math.floor((Math.random()*10));
   let numeroJugador;
