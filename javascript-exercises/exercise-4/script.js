@@ -1,5 +1,10 @@
 function palabraMasLarga(str) {
   
+  // Validation
+  if (typeof str !== 'string') {
+    return 'Debe ingresar una cadena de texto';
+  }
+
   let palabraMasLarga = '';
   const palabras = str.split(' ');
 
@@ -17,6 +22,11 @@ console.assert(palabraMasLarga('Erase una vez que se era') === 'Erase');
 
 function primeraMayuscula(str) {
   
+  // Validation
+  if (typeof str !== 'string') {
+    return 'Debe ingresar una cadena de texto';
+  }
+
   let letras = str.split('');
   
   for (let i = 0; i < letras.length; i++) {
