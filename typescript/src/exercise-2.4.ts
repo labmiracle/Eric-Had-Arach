@@ -42,8 +42,8 @@ class Fish implements FishLike {
 	}
 }
 
-function getRandomAnimal() {
-	const animals = [
+function getRandomAnimal():Animal {  //type annotation added
+	const animals: Animal[] = [  //type annotation added
 		new Bird("puffin"),
 		new Bird("kittiwake"),
 		new Fish("sea robin"),
@@ -53,7 +53,7 @@ function getRandomAnimal() {
 	return animals[Math.floor(Math.random() * animals.length)];
 }
 
-function interrogateAnimal(animal = getRandomAnimal()) {
+function interrogateAnimal(animal = getRandomAnimal()):string {  //type annotation added
 	if (animal instanceof Fish) {
 		animal.swim(10); // se llama solo si es un pez
 	}
