@@ -25,10 +25,10 @@ function playGame(): void {
 	const cardPlayer1: number = extractCardPlayer1(cards);
 	const cardPlayer2: number = extractCardPlayer2(cards);
 	if (cardPlayer1 > cardPlayer2) {
-		console.log("Player 1 wins");
+		console.log("Player 1 wins the game");
 	}
 	else {
-		console.log("Player 2 wins");
+		console.log("Player 2 wins the game");
 	}
 }
 
