@@ -48,3 +48,18 @@ function verifyPositions(randomNumber: string[], playerNumber: string[]): string
 	return result;
 }
 
+function playGame(): void {
+	const randomNumber: string[] = getRandomNumber();
+	let playerNumber: string[] = getPlayerNumber();
+	let result = "";
+	console.log(randomNumber);
+	if (randomNumber.join("") !== playerNumber.join("")) {
+		while(randomNumber.join("") !== playerNumber.join("")) {
+			result = verifyPositions(randomNumber, playerNumber);
+			console.log(result);
+			playerNumber = getPlayerNumber();
+		}
+	}
+}
+
+playGame();

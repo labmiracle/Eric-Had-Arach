@@ -8,8 +8,7 @@ function getRandomNumber() {
     }
     return randomNumber;
 }
-// OK
-function playerNumber() {
+function getPlayerNumber() {
     var numberCollection = prompt("Enter 4 digit number");
     if (numberCollection === null) {
         do {
@@ -23,5 +22,36 @@ function playerNumber() {
     }
     return numberCollection.split("");
 }
-console.log(getRandomNumber());
-console.log(playerNumber());
+// OK
+function verifyExistence(randomNumber, playerNumber, result) {
+    for (var i = 0; i < 4; i++) {
+        if (randomNumber[i] !== playerNumber[i] && playerNumber[i].includes(randomNumber[i])) {
+            result += "-";
+        }
+    }
+    return result;
+}
+function verifyPositions(randomNumber, playerNumber) {
+    var result = "";
+    for (var i = 0; i < 4; i++) {
+        if (randomNumber[i] === playerNumber[i]) {
+            result += "X";
+        }
+    }
+    result = verifyExistence(randomNumber, playerNumber, result);
+    return result;
+}
+function playGame() {
+    var randomNumber = getRandomNumber();
+    var playerNumber = getPlayerNumber();
+    var result = "";
+    console.log(randomNumber);
+    if (randomNumber.join("") !== playerNumber.join("")) {
+        while (randomNumber.join("") !== playerNumber.join("")) {
+            result = verifyPositions(randomNumber, playerNumber);
+            console.log(result);
+            playerNumber = getPlayerNumber();
+        }
+    }
+}
+playGame();
