@@ -18,11 +18,12 @@ function getPlayerNumber(): string[] {
 	return numberCollection.split("");    
 }
 
-// OK
-
 function verifyExistence(randomNumber: string[], playerNumber: string[], result: string) {
 	for (let i = 0; i < 4; i++) {
-		if (randomNumber[i] !== playerNumber[i] && playerNumber[i].includes(randomNumber[i])) {
+		if (randomNumber[i] === playerNumber[i]) {
+			result += "X";
+		}
+		else if (playerNumber.includes(randomNumber[i])) {
 			result += "-";
 		}
 	}
