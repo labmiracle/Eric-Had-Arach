@@ -12,16 +12,8 @@ function getRandomNumber(): string[] {
 
 function getPlayerNumber(): string[] {
 	let numberCollection: string | null = prompt("Enter 4 digit number");
-	if (numberCollection === null) {
-		do {
-			numberCollection = prompt("Enter 4 digit number");
-		}while(numberCollection === null);  
-	}
-	if (numberCollection.length !== 4) {
-		do {
-			numberCollection = prompt("Enter 4 digit number");
-		}while(numberCollection?.length !== 4);
-        
+	while (numberCollection === null || numberCollection?.length !== 4) {
+		numberCollection = prompt("Enter 4 digit number");
 	}
 	return numberCollection.split("");    
 }
