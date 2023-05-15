@@ -18,25 +18,28 @@ function getPlayerNumber(): string[] {
 	return numberCollection.split("");    
 }
 
-function verifyExistence(randomNumber: string[], playerNumber: string[], result: string) {
+function verifyPositions(randomNumber: string[], playerNumber: string[], result: string): string {
 	for (let i = 0; i < 4; i++) {
 		if (randomNumber[i] === playerNumber[i]) {
 			result += "X";
 		}
-		else if (playerNumber.includes(randomNumber[i])) {
+	}
+	return result;
+}
+
+function verifyExistence(randomNumber: string[], playerNumber: string[], result: string): string {
+	for (let i = 0; i < 4; i++) {
+		if (randomNumber.includes(playerNumber[i]) && (randomNumber[i] !== playerNumber[i])) {
 			result += "-";
 		}
 	}
 	return result;
 }
 
-function verifyPositions(randomNumber: string[], playerNumber: string[]): string {
-	let result = "";
-	for (let i = 0; i < 4; i++) {
-		if (randomNumber[i] === playerNumber[i]) {
-			result += "X";
-		}
-	}
+
+function verify(randomNumber: string[], playerNumber: string[], result: string) {
+	result = "";
+	result = verifyPositions(randomNumber, playerNumber, result);
 	result = verifyExistence(randomNumber, playerNumber, result);
 	return result;
 }
@@ -44,15 +47,14 @@ function verifyPositions(randomNumber: string[], playerNumber: string[]): string
 function playGame(): void {
 	const randomNumber: string[] = getRandomNumber();
 	let playerNumber: string[] = getPlayerNumber();
-	let result = "";
-	console.log(randomNumber);
-	if (randomNumber.join("") !== playerNumber.join("")) {
-		while(randomNumber.join("") !== playerNumber.join("")) {
-			result = verifyPositions(randomNumber, playerNumber);
-			console.log(result);
-			playerNumber = getPlayerNumber();
-		}
+	alert(`The random number is ${randomNumber.join("")}`);
+	while(randomNumber.join("") !== playerNumber.join("")) {
+		let result = "";
+		result = verify(randomNumber, playerNumber, result);
+		alert(`${result}`);
+		playerNumber = getPlayerNumber();
 	}
+	alert("XXXX, you win");
 }
 
 playGame();
