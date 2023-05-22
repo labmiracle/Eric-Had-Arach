@@ -1,4 +1,4 @@
-export function sumNumbers(values: any[]): number {
+export function sumNumbers(values: any[]): number {  // puse "any" a propósito para que pueda recibir cualquier tipo de valor dentro del array
     if (values.length === 0) {
         return 0;
     }

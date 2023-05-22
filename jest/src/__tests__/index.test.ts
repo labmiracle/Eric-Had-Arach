@@ -53,7 +53,6 @@ describe("Exercise 1.4", () => {
         expect(sumNumbers([1,"2",3,4])).toBe(10);
         expect(sumNumbers([1,"-2",3,4])).toBe(8);
         expect(sumNumbers([1,"asd",3,4])).toBe(8);
-        
     });
 });
 
