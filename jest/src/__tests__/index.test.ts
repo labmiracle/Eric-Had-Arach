@@ -2,6 +2,7 @@ import { fizzBuzz } from "../exercise-1.1";
 import { isLeapYear } from "../exercise-1.2";
 import { getADN } from "../exercise-1.3";
 import { sumNumbers } from "../exercise-1.4";
+import { getRepeated } from "../exercise-1.5";
 
 describe("Exercise 1.1", () => {
     test("is divisible by 3", () => {
@@ -53,6 +54,16 @@ describe("Exercise 1.4", () => {
         expect(sumNumbers([1,"2",3,4])).toBe(10);
         expect(sumNumbers([1,"-2",3,4])).toBe(8);
         expect(sumNumbers([1,"asd",3,4])).toBe(8);
+    });
+});
+
+describe("Exercise 1.5", () => {
+    test("consecutive letters that do not repeat", () => {
+        expect(getRepeated("abc de hj")).toBe(-1);
+        expect(getRepeated("abab abab")).toBe(-1);
+    });
+    test("consecutive letters that repeat", () => {
+        expect(getRepeated("abcdee")).toBe(4);
     });
 });
 
