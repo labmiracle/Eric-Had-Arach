@@ -1,4 +1,5 @@
 import { fizzBuzz } from "../exercise-1.1";
+import { isLeapYear } from "../exercise-1.2";
 
 describe("Exercise 1.1", () => {
     test("is divisible by 3", () => {
@@ -17,3 +18,17 @@ describe("Exercise 1.1", () => {
     })
 });
 // falta el supuesto de que se pase un string
+
+describe("Exercise 1.2", () => {
+    test("is leap year", () => {
+        expect(isLeapYear(2012)).toBe(true);
+        expect(isLeapYear(2016)).toBe(true);
+        expect(isLeapYear(2020)).toBe(true);
+    });
+    test("isn't leap year", () => {
+        expect(isLeapYear(2013)).not.toBe(true);
+        expect(isLeapYear(2014)).not.toBe(true);
+        expect(isLeapYear(2015)).not.toBe(true);
+    });
+});
+
