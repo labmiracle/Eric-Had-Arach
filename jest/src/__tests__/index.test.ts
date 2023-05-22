@@ -1,5 +1,6 @@
 import { fizzBuzz } from "../exercise-1.1";
 import { isLeapYear } from "../exercise-1.2";
+import { getADN } from "../exercise-1.3";
 
 describe("Exercise 1.1", () => {
     test("is divisible by 3", () => {
@@ -29,6 +30,15 @@ describe("Exercise 1.2", () => {
         expect(isLeapYear(2013)).not.toBe(true);
         expect(isLeapYear(2014)).not.toBe(true);
         expect(isLeapYear(2015)).not.toBe(true);
+    });
+});
+
+describe("Exercise 1.3", () => {
+    test("not empty string", () => {
+        expect(getADN("")).toBe("");
+    });
+    test("test", () => {
+        expect(getADN("CTAGGGTA")).toBe("CTAG");
     });
 });
 
