@@ -17,5 +17,3 @@ export function getADN(cad: string): string {
     }
     return newString;
 }
-
-console.log(getADN("CTAGGGTA"));
