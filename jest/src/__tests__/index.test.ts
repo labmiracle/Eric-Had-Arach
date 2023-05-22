@@ -1,4 +1,4 @@
-import { fizzBuzz } from "../src/exercise-1.1";
+import { fizzBuzz } from "../exercise-1.1";
 
 describe("Exercise 1.1", () => {
     test("is divisible by 3", () => {
