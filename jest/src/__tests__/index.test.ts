@@ -3,6 +3,7 @@ import { isLeapYear } from "../exercise-1.2";
 import { getADN } from "../exercise-1.3";
 import { sumNumbers } from "../exercise-1.4";
 import { getRepeated } from "../exercise-1.5";
+import { getMaximunOfOne } from "../exercise-1.6";
 
 describe("Exercise 1.1", () => {
     test("is divisible by 3", () => {
@@ -64,6 +65,21 @@ describe("Exercise 1.5", () => {
     });
     test("consecutive letters that repeat", () => {
         expect(getRepeated("abcdee")).toBe(4);
+    });
+});
+
+describe("Exercise 1.6", () => {
+    test("value other than 0 or 1", () => {
+        expect(getMaximunOfOne([0,1,2])).toBe(-1);
+        expect(getMaximunOfOne([0,1,1,"2"])).toBe(-1);
+    });
+    test("only numbers", () => {
+        expect(getMaximunOfOne([0,0,1,1,0,1,1,1,1])).toBe(4);
+        expect(getMaximunOfOne([1,1,0,0,1,1,1])).toBe(3);
+    });
+    test("numbers and strings", () => {
+        expect(getMaximunOfOne([0,0,1,1,0,1,"1",1,"1"])).toBe(4);
+        expect(getMaximunOfOne([1,"1",0,0,1,"1",1])).toBe(3);
     });
 });
 
