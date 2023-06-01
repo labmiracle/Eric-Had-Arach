@@ -1,0 +1,8 @@
+$days: monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+
+@each $day in $days {
+  .#{$day} {
+    color: red;
+    font-size: 36px;
+  }
+}
