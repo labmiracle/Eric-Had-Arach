@@ -1,0 +1,30 @@
+// Ejemplo de características de Sass
+
+// Característica 1: Interpolación de strings
+
+$hobby: "jugar al tenis";
+$mensaje: "Mi hobby favorito es #{$hobby}.";
+
+.caracteristica1 {
+  content: "#{$mensaje}";
+}
+
+
+// Característica 2: Mixins y selección por condición
+
+@mixin tema($tema) {
+  @if $tema == "oscuro" {
+    background-color: #333;
+    color: #FFF;
+  } @else if $tema == "claro" {
+    background-color: #FFF;
+    color: #333;
+  } @else {
+    background-color: #EEE;
+    color: #555;
+  }
+}
+
+.caracteristica2 {
+  @include tema("oscuro");
+}
