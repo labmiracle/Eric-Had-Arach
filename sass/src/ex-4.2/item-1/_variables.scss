@@ -2,7 +2,7 @@ $first-color: red;
 $paragraph-font-size: 20px;
 
 @mixin test {
-    color: red;
+    color: $first-color;
     font-size: $paragraph-font-size;
 }
 
