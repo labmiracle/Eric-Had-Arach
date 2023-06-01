@@ -1,0 +1,12 @@
+@use "colors";
+@use "font-size";
+
+h1 {
+    color: colors.$h1-color;
+    font-size: font-size.$h1-size;
+}
+
+p {
+    color: colors.$p-color;
+    font-size: font-size.$p-size;
+}
