@@ -1,0 +1,28 @@
+
+$days: monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+
+@function setColor($day) {
+  @if $day == monday {
+    @return blue;
+  } 
+  @else if $day == tuesday {
+    @return red;
+  } 
+  @else if $day == wednesday {
+    @return yellow;
+  } 
+  @else if $day == thursday {
+    @return orange;
+  } 
+  @else if $day == friday {
+    @return purple;
+  } 
+  @else if $day == saturday {
+    @return green;
+  } 
+  @else {
+    @return black;
+  } 
+}
+
+// falta realizar el bucle
