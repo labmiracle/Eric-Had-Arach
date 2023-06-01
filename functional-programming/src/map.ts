@@ -31,3 +31,14 @@ const characters = [
 
 // Obtener un arreglo de todos los nombres
 const names = characters.map(elem => elem.name);
+
+// Obtener un arreglo de todas las alturas
+const heights = characters.map(elem => elem.height);
+
+// Obtener un arreglo de objetos con las propiedades de nombre y altura
+const namesAndHeights = characters.map(elem => {
+    return {
+        name: elem.name, 
+        height: elem.height
+    }
+});

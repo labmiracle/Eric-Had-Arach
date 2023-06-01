@@ -30,4 +30,14 @@ var characters = [
 ];
 // Obtener un arreglo de todos los nombres
 var names = characters.map(function (elem) { return elem.name; });
-console.log(names);
+// Obtener un arreglo de todas las alturas
+var heights = characters.map(function (elem) { return elem.height; });
+// Obtener un arreglo de objetos con las propiedades de nombre y altura
+var namesAndHeights = characters.map(function (elem) {
+    return {
+        name: elem.name,
+        height: elem.height
+    };
+});
+console.log(heights);
+console.log(namesAndHeights);
