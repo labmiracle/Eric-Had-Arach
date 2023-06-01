@@ -1,0 +1,12 @@
+@mixin set-transition {
+    -webkit-transition: all .5;
+}
+
+@mixin set-margin-and-padding {
+    margin: 5px;
+    padding: 5px;
+}
+
+@mixin set-border {
+    border: 2px solid blue;
+}
