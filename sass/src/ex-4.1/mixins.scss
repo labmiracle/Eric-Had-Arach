@@ -1,0 +1,8 @@
+@mixin color-and-size($color, $size) {
+    color: $color;
+    size: $size;
+}
+
+h1 {
+    @include color-and-size(blue, 24px);
+}
