@@ -29,6 +29,8 @@ const characters = [
     }
 ];
 
+//--------------MAP---------------
+
 // Obtener un arreglo de todos los nombres
 const names = characters.map(elem => elem.name);
 
@@ -42,3 +44,13 @@ const namesAndHeights = characters.map(elem => {
         height: elem.height
     }
 });
+
+
+//--------------REDUCE---------------
+
+// Obtener la masa total de todos los personajes
+const totalMass = characters.reduce((accumulator, elem) => {
+    return accumulator + Number(elem.mass);
+}, 0);
+
+console.log(totalMass);
