@@ -29,7 +29,7 @@ const characters = [
     }
 ];
 
-//--------------MAP---------------
+//----------------------------MAP----------------------------
 
 // Obtener un arreglo de todos los nombres
 const names = characters.map(elem => elem.name);
@@ -46,7 +46,7 @@ const namesAndHeights = characters.map(elem => {
 });
 
 
-//--------------REDUCE---------------
+//----------------------------REDUCE----------------------------
 
 // Obtener la masa total de todos los personajes
 const totalMass = characters.reduce((accumulator, elem) => {
@@ -66,7 +66,7 @@ const totalCharactersNames = characters.reduce((accumulator, elem) => {
 // Obtener el número total de caracteres por color de ojos (pista: un mapa de color de ojos para contar)
 
 
-//--------------FILTER---------------
+//----------------------------FILTER----------------------------
 
 // Obtener personajes con masa superior a 100
 const charactersWithMassGreaterThan100 = characters.filter(elem => Number(elem.mass) > 100);
@@ -79,4 +79,69 @@ const male = characters.filter(elem => elem.gender === "male");
 
 // Obtener todos los personajes femeninos
 const female = characters.filter(elem => elem.gender === "female");
+
+
+//----------------------------SORT----------------------------
+
+// Ordenar por nombre
+const orderByName = characters.sort((a, b) => {
+    let nameA = a.name;
+    let nameB = b.name;
+    if (nameA > nameB) {
+        return 1;
+    }
+    else if (nameA < nameB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+
+// Ordenar por masa
+const orderByMass = characters.sort((a, b) => {
+    let massA = Number(a.mass);
+    let massB = Number(b.mass);
+    if (massA > massB) {
+        return 1;
+    }
+    else if (massA < massB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+
+// Ordenar por altura
+const orderByHeight = characters.sort((a, b) => {
+    let heightA = Number(a.height);
+    let heightB = Number(b.height);
+    if (heightA > heightB) {
+        return 1;
+    }
+    else if (heightA < heightB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+
+// Ordenar por género
+const orderByGender = characters.sort((a, b) => {
+    let genderA = a.gender;
+    let genderB = b.gender;
+    if (genderA > genderB) {
+        return 1;
+    }
+    else if (genderA < genderB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+
+
 

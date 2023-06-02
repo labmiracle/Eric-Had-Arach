@@ -28,7 +28,7 @@ var characters = [
         gender: 'male'
     }
 ];
-//--------------MAP---------------
+//----------------------------MAP----------------------------
 // Obtener un arreglo de todos los nombres
 var names = characters.map(function (elem) { return elem.name; });
 // Obtener un arreglo de todas las alturas
@@ -40,7 +40,7 @@ var namesAndHeights = characters.map(function (elem) {
         height: elem.height
     };
 });
-//--------------REDUCE---------------
+//----------------------------REDUCE----------------------------
 // Obtener la masa total de todos los personajes
 var totalMass = characters.reduce(function (accumulator, elem) {
     return accumulator + Number(elem.mass);
@@ -54,3 +54,70 @@ var totalCharactersNames = characters.reduce(function (accumulator, elem) {
     return accumulator + elem.name.length;
 }, 0);
 // Obtener el número total de caracteres por color de ojos (pista: un mapa de color de ojos para contar)
+//----------------------------FILTER----------------------------
+// Obtener personajes con masa superior a 100
+var charactersWithMassGreaterThan100 = characters.filter(function (elem) { return Number(elem.mass) > 100; });
+// Obtener personajes con una altura inferior a 200
+var charactersWithHeightLessThan200 = characters.filter(function (elem) { return Number(elem.height) < 200; });
+// Obtener todos los personajes masculinos
+var male = characters.filter(function (elem) { return elem.gender === "male"; });
+// Obtener todos los personajes femeninos
+var female = characters.filter(function (elem) { return elem.gender === "female"; });
+//----------------------------SORT----------------------------
+// Ordenar por nombre
+var orderByName = characters.sort(function (a, b) {
+    var nameA = a.name;
+    var nameB = b.name;
+    if (nameA > nameB) {
+        return 1;
+    }
+    else if (nameA < nameB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+// Ordenar por masa
+var orderByMass = characters.sort(function (a, b) {
+    var massA = Number(a.mass);
+    var massB = Number(b.mass);
+    if (massA > massB) {
+        return 1;
+    }
+    else if (massA < massB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+// Ordenar por altura
+var orderByHeight = characters.sort(function (a, b) {
+    var heightA = Number(a.height);
+    var heightB = Number(b.height);
+    if (heightA > heightB) {
+        return 1;
+    }
+    else if (heightA < heightB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+// Ordenar por género
+var orderByGender = characters.sort(function (a, b) {
+    var genderA = a.gender;
+    var genderB = b.gender;
+    if (genderA > genderB) {
+        return 1;
+    }
+    else if (genderA < genderB) {
+        return -1;
+    }
+    else {
+        return 0;
+    }
+});
+console.log(orderByGender);
