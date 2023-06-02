@@ -120,4 +120,12 @@ var orderByGender = characters.sort(function (a, b) {
         return 0;
     }
 });
-console.log(orderByGender);
+//----------------------------EVERY----------------------------
+// ¿Todos los personajes tienen ojos azules?
+var allBlueEyes = characters.every(function (elem) { return elem.eye_color === "blue"; });
+// ¿Todos los personajes tienen una masa superior a 40?
+var allMassGreaterThan40 = characters.every(function (elem) { return Number(elem.mass) > 40; });
+// ¿Todos los caracteres son más bajos que 200?
+var allHeightLessThan200 = characters.every(function (elem) { return Number(elem.height) < 200; });
+// ¿Todos los personajes son hombres?
+var allMen = characters.every(function (elem) { return elem.gender === "male"; });

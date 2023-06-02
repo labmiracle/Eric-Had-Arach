@@ -144,4 +144,21 @@ const orderByGender = characters.sort((a, b) => {
 });
 
 
+//----------------------------EVERY----------------------------
+
+// ¿Todos los personajes tienen ojos azules?
+const allBlueEyes = characters.every(elem => elem.eye_color === "blue");
+
+// ¿Todos los personajes tienen una masa superior a 40?
+const allMassGreaterThan40 = characters.every(elem => Number(elem.mass) > 40);
+
+// ¿Todos los caracteres son más bajos que 200?
+const allHeightLessThan200 = characters.every(elem => Number(elem.height) < 200);
+
+// ¿Todos los personajes son hombres?
+const allMen = characters.every(elem => elem.gender === "male");
+
+
+
+
 
