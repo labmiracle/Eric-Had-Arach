@@ -29,7 +29,7 @@ const arrayOfStrings = users.map(elem => `${elem.firstName}-${elem.lastName}: ${
 const fullStackResidentUsers = users.filter(elem => elem.role === "Full Stack Resident");
 
 // Reduce el arreglo a un objeto en el que cada propiedad es un role y su valor un arreglo con los objetos usuarios que tienen dicho role
-const roles = users.reduce(((obj, elem) => {
+const roles = users.reduce(((obj, elem: { firstName: string, lastName: string, role: string }) => {
     if (obj.hasOwnProperty(elem.role)) {
         obj[elem.role].push(elem);
     }
@@ -40,3 +40,6 @@ const roles = users.reduce(((obj, elem) => {
 }), {});
 
 // Genera una función de búsqueda de un usuario por firstName con find
+function findUser(users: { firstName: string, lastName: string, role: string }[], firstName: string) {
+    return users.find(elem => elem.firstName === firstName);
+}
