@@ -66,3 +66,17 @@ const totalCharactersNames = characters.reduce((accumulator, elem) => {
 // Obtener el número total de caracteres por color de ojos (pista: un mapa de color de ojos para contar)
 
 
+//--------------FILTER---------------
+
+// Obtener personajes con masa superior a 100
+const charactersWithMassGreaterThan100 = characters.filter(elem => Number(elem.mass) > 100);
+
+// Obtener personajes con una altura inferior a 200
+const charactersWithHeightLessThan200 = characters.filter(elem => Number(elem.height) < 200);
+
+// Obtener todos los personajes masculinos
+const male = characters.filter(elem => elem.gender === "male");
+
+// Obtener todos los personajes femeninos
+const female = characters.filter(elem => elem.gender === "female");
+
