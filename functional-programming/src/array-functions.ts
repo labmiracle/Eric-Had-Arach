@@ -159,6 +159,21 @@ const allHeightLessThan200 = characters.every(elem => Number(elem.height) < 200)
 const allMen = characters.every(elem => elem.gender === "male");
 
 
+//----------------------------SOME----------------------------
+
+// ¿Hay al menos un personaje masculino?
+const aMale = characters.some(elem => elem.gender === "male");
+
+// ¿Hay al menos un personaje con ojos azules?
+const oneWithBlueEyes = characters.some(elem => elem.eye_color === "blue");
+
+// ¿Hay al menos un personaje más alto que 200?
+const oneWithHeightGreaterThan200 = characters.some(elem => Number(elem.height) > 200);
+
+// ¿Hay al menos un personaje que tenga una masa inferior a 50?
+const oneWithMassLessThan50 = characters.some(elem => Number(elem.mass) < 50);
+
+
 
 
 
