@@ -10,7 +10,7 @@ function Text() {
         <>
             <p>Text: {text}</p>
             <button onClick={handleIncrement}>Increment</button>
-            <button onClick={handleDecrement}>DEcrement</button>
+            <button onClick={handleDecrement}>Decrement</button>
         </>
     );
 }
