@@ -1,29 +1,24 @@
-import './App.css';
 import { useState } from 'react';
 
-function Component() {
-    const [json, setJson] = useState(null);
-    
-    async function dataRequest() {
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-        const jsonData = await response.json();
-        setJson(jsonData);
+function Input() {
+    const [text, setText] = useState('');
+
+    function handleTextInput(e) {
+        setText(e.target.value);
     }
 
     return (
         <>
-            <button onClick={dataRequest}>Print JSON</button>
-            <p>{JSON.stringify(json)}</p>
+            <input type="text" value={text} onChange={handleTextInput} />
+            <p>{text}</p>
         </>
     );
 }
 
-function App() {
+export default function App() {
     return (
         <>
-            <Component></Component>    
+            <Input />
         </>
     );
 }
-
-export default App;
