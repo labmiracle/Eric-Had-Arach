@@ -107,41 +107,25 @@ class LinkedList<T> {
             }
 
         }
-        /*let next;
-        let previous;
-        while (current !== null) {
-            if (current === this.head) {
-                current.next = null;
-            }
-            current.next = previous;
-
-        }
-        let newList: (LinkedList<T> | null);*/
     }
+
+    deleteDups() {
+        const array: T[] = [];
+        let current = this.head;
+        if (current === null) {
+            return;
+        }
+        let previous = current;
+        while (current !== null) {
+            if (array.includes(current.data)) {
+                previous.nextNode = current.nextNode;
+                current = current.nextNode;
+            }else {
+                array.push(current.data);
+                previous = current;
+                current = current.nextNode;
+            }
+        }
+    }  
 }
 
-
-/*
-const lista = new LinkedList<number>();
-lista.add(1);
-lista.add(2);
-lista.add(3);
-lista.add(4);
-lista.printList();
-console.log("-----------");
-
-lista.remove(2);
-lista.printList();
-console.log("-----------");
-lista.remove(5);
-lista.printList();
-console.log("-----------");
-
-console.log(lista.find(4));
-console.log(lista.find(5));
-console.log("-----------");
-
-console.log("INVERT");
-lista.invert();
-lista.printList();
-*/
