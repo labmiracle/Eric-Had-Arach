@@ -1,28 +1,23 @@
-class Nodo {
-    data;
-    next;
-
-    constructor(data, next = null) {
+var Nodo = /** @class */ (function () {
+    function Nodo(data, next) {
+        if (next === void 0) { next = null; }
         this.data = data;
         this.next = next;
     }
-}
-
-class LinkedList {
-    head;
-    size;
-
-    constructor() {
+    return Nodo;
+}());
+var LinkedList = /** @class */ (function () {
+    function LinkedList() {
         this.head = null;
         this.size = 0;
     }
-
-    add(data) {
-        let node = new Nodo(data);
-        let current = null;
+    LinkedList.prototype.add = function (data) {
+        var node = new Nodo(data);
+        var current = null;
         if (this.head === null) {
             this.head = node;
-        }else {
+        }
+        else {
             current = this.head;
             while (current.next) {
                 current = current.next;
@@ -30,57 +25,66 @@ class LinkedList {
             current.next = node;
         }
         this.size++;
-    }
-    
-    remove(data) {
-        let current = this.head;
-        if (current === null) {  //empty list
+    };
+    LinkedList.prototype.remove = function (data) {
+        var current = this.head;
+        if (current === null) { //empty list
             return;
         }
-
-        let previous = null;
+        var previous = null;
         while ((current !== null) && (current.data !== data)) {
             previous = current;
             current = current.next;
         }
-        if (current === null) {  //the node to be deleted does not exist
+        if (current === null) { //the node to be deleted does not exist
             return;
         }
-        if (previous === null) {  //the node to be deleted is the first one
+        if (previous === null) { //the node to be deleted is the first one
             this.head = current.next;
-        }else {
+        }
+        else {
             previous.next = current.next;
         }
         this.size--;
-    }
-    
-    getSize() {
+    };
+    LinkedList.prototype.getSize = function () {
         return this.size;
-    }
-
-    find(data) {
-        let current = this.head;
+    };
+    LinkedList.prototype.find = function (data) {
+        var current = this.head;
         while ((current !== null) && (current.data !== data)) {
             current = current.next;
         }
-        if (current === null) {  //the node does not exist
+        if (current === null) { //the node does not exist
             return null;
         }
-        if (current.data === data) {  //node was found
+        if (current.data === data) { //node was found
             return current;
         }
-    }
-
-    printList() {  //own method (not required by the exercise)  
+    };
+    LinkedList.prototype.printList = function () {
         if (this.head === null) {
             console.log("Empty list");
-        }else {
-            let current = this.head;
+        }
+        else {
+            var current = this.head;
             while (current !== null) {
                 console.log(current.data);
                 current = current.next;
             }
         }
-    }
-}
-
+    };
+    return LinkedList;
+}());
+var lista = new LinkedList();
+lista.add(1);
+lista.add(2);
+lista.add(3);
+lista.add(4);
+lista.printList();
+lista.remove(2);
+lista.printList();
+lista.remove(5);
+lista.printList();
+console.log(lista.find(4));
+console.log(lista.find(5));
