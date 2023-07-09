@@ -1,7 +1,7 @@
 import Stack from "./stack";
 
 export default class OtherStack extends Stack<number | string> {
-    basis: number;
+    private basis: number;
     
     constructor(basis: number) {
         super();
